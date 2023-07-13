@@ -3,6 +3,8 @@
 /*
  * main - Entry point
  *
+ * Description: prints a string using the puts function
+ *
  * Return: Always 0 (Success)
  */
 
