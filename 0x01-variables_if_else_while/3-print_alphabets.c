@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - print letters
@@ -11,15 +12,16 @@ int main(void)
 	char upper = 'A';
 	char lower = 'a';
 
-	while (upper <= 'Z' || lower <= 'z')
+	while (lower <= 'z')
 	{
-		putchar(upper);
-		upper++;
-
 		putchar(lower);
 		lower++;
 	}
-
+	while (upper <= 'Z')
+	}
+		putchar(upper);
+		upper++;
+	}
 	putchar('\n');
 	return (0);
 }
