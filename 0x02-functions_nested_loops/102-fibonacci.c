@@ -8,8 +8,8 @@
 int main(void)
 {
 	int count = 3;
-	long int first = 1, second = 2;
-	long int next = first + second;
+	long first = 1, second = 2;
+	long next = first + second;
 
 	printf("%lu, ", first);
 	printf("%lu, ", second);
