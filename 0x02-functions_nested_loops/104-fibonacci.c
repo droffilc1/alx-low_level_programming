@@ -13,7 +13,7 @@ int main(void)
 	while (i < 98)
 	{
 		if (i == 0)
-			printf("%ld", j);
+			printf("%lu", j);
 		else if (i == 1)
 			printf(", %lu", k);
 		else
