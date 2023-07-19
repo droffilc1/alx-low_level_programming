@@ -18,7 +18,7 @@ int main(void)
 	{
 		if (count == 50)
 		{
-			printf("%lu\n", next);
+			printf("%lu \n", next);
 		}
 		else
 		{
@@ -26,7 +26,7 @@ int main(void)
 		}
 
 		first = second;
-		second = first;
+		second = next;
 
 		next = first + second;
 		count++;
