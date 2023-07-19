@@ -7,29 +7,29 @@
  */
 int main(void)
 {
-	int count = 3;
-	long first = 1, second = 2;
-	long next = first + second;
+	int i = 3;
+	long j = 1, k = 2;
+	long m = j + k;
 
-	printf("%ld, ", first);
-	printf("%ld, ", second);
+	printf("%ld, ", j);
+	printf("%ld, ", k);
 
-	while (count <= 50)
+	while (i <= 50)
 	{
-		if (count == 50)
+		if (i == 50)
 		{
-			printf("%ld \n", next);
+			printf("%ld \n", m);
 		}
 		else
 		{
-			printf("%ld, ", next);
+			printf("%ld, ", m);
 		}
 
-		first = second;
-		second = next;
+		j = k;
+		k = m;
 
-		next = first + second;
-		count++;
+		m = j + k;
+		i++;
 	}
 	return (0);
 }
