@@ -10,11 +10,14 @@
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	if ((dest != NULL) && (src != NULL))
+	char *dest_char = (char *)dest;
+	char *src_char = (char *)src;
+
+	if ((dest_char != NULL) && (src_char != NULL))
 	{
 		while (n)
 		{
-			*(dest++) = (*src++);
+			*(dest_char++) = (*src_char++);
 			--n;
 		}
 	}
