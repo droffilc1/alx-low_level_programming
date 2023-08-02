@@ -6,12 +6,12 @@
  *@length: string length
  *@i: iterator
  *
- * Retur: 1 if is palindrome. Otherwise 0
+ * Return: 1 if is palindrome. Otherwise 0
  */
 int check_palindrome(char *str, int length, int i)
 {
 	if (i < length && str[i] == str[length])
-		return (check_palindrome(str, length -1, i + 1));
+		return (check_palindrome(str, length - 1, i + 1));
 	if (str[i] != str[length])
 		return (0);
 	return (1);
