@@ -1,2 +1,2 @@
 #!/bin/bash
-ar -rcs libmy.a *.o
+ar -rcs liball.a *.o
