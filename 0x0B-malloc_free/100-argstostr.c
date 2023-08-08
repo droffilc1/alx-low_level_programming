@@ -21,12 +21,12 @@ char *argstostr(int ac, char **av)
 
 	for (i = 0; i < ac; i++)
 	{
-		len += strlen(av[i]);
+		len += strlen(av[i]) + 1;
 	}
 
-	len += ac - 1 + 1;
 
-	_all_args = all_args = malloc(len);
+
+	_all_args = all_args = malloc(len + 1);
 
 	for (i = 0; i < ac; i++)
 	{
