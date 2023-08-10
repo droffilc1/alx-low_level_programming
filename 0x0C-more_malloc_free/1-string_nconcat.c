@@ -1,27 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
 
-/**
- * _strlen - returns length of a string
- * @s: The characters to be checked
- *
- * Return: length of a string
- */
-int _strlen(char *s)
-{
-	unsigned int count = 0;
-
-	while (*s != '\0')
-	{
-		count++;
-		s++;
-	}
-	return (count);
-}
-
-/**
- * string_nconcat - concatenates two strings
+/*
  * @s1: The first string
  * @s2: The second string
  * @n: number of bytes
@@ -31,30 +11,28 @@ int _strlen(char *s)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ptr;
-	unsigned int len1 = _strlen(s1);
-	unsigned int len2 = _strlen(s2);
-	unsigned int i, j, num;
-
-	num = n;
+	unsigned int i, len = n;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 
-	if (num >= len2)
-		num = len2;
+	for (i = 0; s1[i]; i++)
+		len++;
 
-	ptr = malloc(len1 + num + 1);
+	ptr = malloc(len + 1);
 
 	if (ptr == NULL)
 		return (NULL);
 
-	for (i = 0; s1[i] != '\0'; i++)
-		ptr[i] = s1[i];
-	for (j = 0; j < num; j++)
-		ptr[i + j] = s2[j];
-	ptr[i + j] = '\0';
+	len = 0;
+
+	for (i = 0; s1[i]; i++)
+		ptr[len++] = s1[i];
+	for (i = 0; s2[i] && i < n; i++)
+		ptr[len++] = s2[i];
+	ptr[len++] = '\0';
 
 	return (ptr);
 }
