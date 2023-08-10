@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
- * string_nconcat - concatenates two strings
+/**
+ * string_nconcat -concatenates two strings
  * @s1: The first string
  * @s2: The second string
  * @n: number of bytes
