@@ -1,6 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include "main.h"
+
+/**
+ * _strlen - returns length of a string
+ * @s: The characters to be checked
+ *
+ * Return: length of a string
+ */
+int _strlen(char *s)
+{
+	unsigned int count = 0;
+
+	while (*s != '\0')
+	{
+		count++;
+		s++;
+	}
+	return (count);
+}
 
 /**
  * string_nconcat - concatenates two strings
@@ -13,8 +31,8 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ptr;
-	int len1 = strlen(s1);
-	int len2 = strlen(s2);
+	int len1 = _strlen(s1);
+	int len2 = _strlen(s2);
 	int i, j, num;
 
 	num = n;
