@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdarg.h>
-
 /**
  * print_all - prints anything
  * @format: the format
@@ -17,7 +16,6 @@ void print_all(const char * const format, ...)
 	unsigned int index = 0;
 
 	va_start(ap, format);
-
 	while (format != NULL && format[index] != '\0')
 	{
 		switch (format[index])
@@ -41,7 +39,6 @@ void print_all(const char * const format, ...)
 				else
 					printf("nil");
 				break;
-
 			default:
 				index++;
 				continue;
@@ -50,8 +47,6 @@ void print_all(const char * const format, ...)
 			printf(", ");
 		index++;
 	}
-
 	va_end(ap);
 	printf("\n");
-
 }
