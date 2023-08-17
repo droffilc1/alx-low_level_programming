@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdarg.h>
-#include <stddef.h>
 
 /**
  * print_all - prints anything
@@ -15,21 +14,25 @@ void print_all(const char * const format, ...)
 	int i;
 	char c, *s;
 	float f;
-	int index;
+	int index = 0;
 
 	va_start(ap, format);
-	index = 0;
-	while (format[index])
+
+	while (format != NULL && format[index] != '\0')
 	{
 		switch (format[index])
 		{
+			case 'c':
+				c = (char) va_arg(ap, int);
+				printf("%c", c);
+				break;
 			case 'i':
 				i = va_arg(ap, int);
 				printf("%d", i);
 				break;
-			case 'c':
-				c = (char) va_arg(ap, int);
-				printf("%c", c);
+			case 'f':
+				f = (float) va_arg(ap, double);
+				printf("%f", f);
 				break;
 			case 's':
 				s = va_arg(ap, char *);
@@ -38,10 +41,7 @@ void print_all(const char * const format, ...)
 				else if (s == NULL)
 					printf("nil");
 				break;
-			case 'f':
-				f = (float) va_arg(ap, double);
-				printf("%f", f);
-				break;
+
 			default:
 				index++;
 				continue;
