@@ -14,7 +14,7 @@ void print_all(const char * const format, ...)
 	int i;
 	char c, *s;
 	float f;
-	int index = 0;
+	unsigned int index = 0;
 
 	va_start(ap, format);
 
@@ -23,7 +23,7 @@ void print_all(const char * const format, ...)
 		switch (format[index])
 		{
 			case 'c':
-				c = (char) va_arg(ap, int);
+				c = va_arg(ap, int);
 				printf("%c", c);
 				break;
 			case 'i':
@@ -38,7 +38,7 @@ void print_all(const char * const format, ...)
 				s = va_arg(ap, char *);
 				if (s != NULL)
 					printf("%s", s);
-				else if (s == NULL)
+				else
 					printf("nil");
 				break;
 
@@ -50,6 +50,8 @@ void print_all(const char * const format, ...)
 			printf(", ");
 		index++;
 	}
-	printf("\n");
+
 	va_end(ap);
+	printf("\n");
+
 }
