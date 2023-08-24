@@ -3,7 +3,7 @@
 /**
  * add_node - adds new node t the beginning
  * @head: element to be used
- * @str string
+ * @str: string
  *
  * Return: address of the new element. Otherwise NULL.
  */
