@@ -8,27 +8,30 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *temp, *temp2;
-	unsigned int count = 0;
+	size_t count = 0;
+	const listint_t *current = head;
+	const listint_t *visited[1024];
+	size_t i;
 
-	temp = head;
-
-	if (!temp)
+	if (head == NULL)
 		exit(98);
 
-	while (temp)
+	while (current != NULL)
 	{
-		temp2 = temp;
-		temp = temp->next;
-		count++;
-
-		printf("[%p] %d\n", (void *)temp2, temp2->n);
-
-		if (temp2 <= temp)
+		for (i = 0; i < count; i++)
 		{
-			printf("-> [%p] %d\n", (void *)temp, temp->n);
-			break;
+			if (current == visited[i])
+			{
+				printf("-> [%p] %d\n", (void *)current, current->n);
+				return (count);
+			}
 		}
+
+		visited[count] = current;
+
+		printf("[%p] %d\n", (void *)current, current->n);
+		current = current->next;
+		count++;
 	}
 
 	return (count);
