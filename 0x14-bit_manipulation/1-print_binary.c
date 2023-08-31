@@ -8,8 +8,25 @@
  */
 void print_binary(unsigned long int n)
 {
-	if (n > 1)
-		print_binary(n / 2);
+	int shift, bits, leadingZeroes = 1;
 
-	_putchar('0' + n % 2);
+	if (n == 0)
+		_putchar('0');
+
+	shift = sizeof(unsigned long int) * 8 - 1;
+
+	while (shift >= 0)
+	{
+		bits = (n >> shift) & 1;
+		if (bits)
+		{
+			leadingZeroes = 0;
+			_putchar('0' + bits);
+		}
+		else if (!leadingZeroes)
+		{
+			_putchar('0' + bits);
+		}
+		shift--;
+	}
 }
