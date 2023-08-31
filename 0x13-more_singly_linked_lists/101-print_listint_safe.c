@@ -9,12 +9,14 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t count = 0;
-	const listint_t *current = head;
+	const listint_t *current;
 	const listint_t *visited[1024];
 	size_t i;
 
 	if (head == NULL)
 		exit(98);
+
+	current = head;
 
 	while (current != NULL)
 	{
