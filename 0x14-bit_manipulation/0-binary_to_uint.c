@@ -25,8 +25,10 @@ unsigned int binary_to_uint(const char *b)
 	sum = 0;
 	while (b >= s)
 	{
-		if (*b != '1' && *b != '0')
+		if (*b != '0' && *b != '1')
+		{
 			return (0);
+		}
 		i = *b - '0';
 		value = i * (1 << power);
 		sum = sum + value;
