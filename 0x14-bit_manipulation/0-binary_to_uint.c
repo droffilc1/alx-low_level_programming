@@ -8,28 +8,30 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int decimal = 0, base = 1, len = 0;
-	int i;
+	unsigned int power;
+	unsigned int value;
+	unsigned int sum;
+	unsigned int i;
+	const char *s;
 
-	/* Hanlde NULL input */
-	if (b == NULL)
-		return (0);
-
-	/* Find length of binary string */
-	while (b[len] != '\0')
+	s = b;
+	while (*b != '\0')
 	{
-		/* Handle non-0/1 chars in the string */
-		if (b[len] != '0' && b[len] != '1')
+		b++;
+	}
+	b--;
+
+	power = 0;
+	sum = 0;
+	while (b >= s)
+	{
+		if (*b != '1' && *b != '0')
 			return (0);
-		len++;
+		i = *b - '0';
+		value = i * (1 << power);
+		sum = sum + value;
+		b--;
+		power++;
 	}
-
-	/* Convert binary to decimal */
-	for (i = len - 1; i >= 0; i--)
-	{
-		if (b[i] == '1')
-			decimal += base;
-		base *= 2;
-	}
-	return (decimal);
+	return (sum);
 }
