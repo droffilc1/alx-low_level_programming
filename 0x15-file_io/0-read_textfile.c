@@ -10,21 +10,33 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *fp;
-	char c;
+	int fd, checkr, checkw;
+	char *c;
 
-	letters = 0;
-	fp = fopen(filename, "r");
-	if (fp == NULL || filename == NULL)
+	if (filename == NULL)
 		return (0);
 
-	while ((c = fgetc(fp)) != EOF)
-	{
-		letters = letters + 1;
-		printf("%c", c);
-	}
+	c = malloc(letters + 1);
+	if (c == NULL)
+		return (0);
 
-	return (letters);
+	fd = open(filename, O_RDONLY);
 
-	fclose(fp);
+	if (fd == -1)
+		return (free(c), 0);
+
+	checkr = read(fd, c, letters);
+
+	if (checkr == -1)
+		return (free(c), 0);
+
+	c[letters] = '\0';
+
+	checkw = write(STDOUT_FILENO, c, checkr);
+	if (checkw == -1)
+		return (free(c), 0);
+
+	free(c);
+	close(fd);
+	return (checkw);
 }
