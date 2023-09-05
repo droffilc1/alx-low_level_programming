@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 	if (checkr == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(99);
+		exit(98);
 	}
 	checkc1 = close(fd_from);
 	if (checkc1 == -1)
