@@ -12,8 +12,8 @@ int _strlen(char *s)
 
 	while (*s != '\0')
 	{
-		s++;
 		len++;
+		s++;
 	}
 	return (len);
 }
@@ -30,19 +30,19 @@ int append_text_to_file(const char *filename, char *text_content)
 	int fd;
 	int checkw;
 
-	if (filename == NULL || text_content == NULL)
+	if (filename == NULL)
 		return (-1);
 
 	fd = open(filename, O_WRONLY | O_APPEND);
 	if (fd == -1)
 		return (-1);
 
-	checkw = write(fd, text_content, _strlen(text_content));
-
-	if (checkw == -1)
+	if (text_content)
 	{
-		close(fd);
-		return (-1);
+		checkw = write(fd, text_content, _strlen(text_content));
+
+		if (checkw == -1)
+			return (-1);
 	}
 	close(fd);
 	return (1);
