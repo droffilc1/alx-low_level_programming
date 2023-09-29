@@ -18,7 +18,7 @@ algorithm section.
 * [0x08. C - Recursion](./0x08-recursion)
 * [0x09. C - Static libraries](./0x09-static_libraries)
 * [0x10. C - Variadic functions](./0x10-variadic_functions)
-* [0x11. C - Printf](./0x11-printf)
+* [0x11. C - Printf](https://github.com/droffilc1/printf)
 * [0x12. C - Singly-linked lists](./0x12-singly_linked_lists)
 * [0x13. C - More singly linked lists](./0x13-more_singly_linked_lists)
 * [0x14. C - Bit manipulation](./0x14-bit_manipulation)
