@@ -31,24 +31,21 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (idx == 0)
 	{
 		/* Insert at the begining */
-		if (*h != NULL)
-		{
-			new_node->next = *h;
-			(*h)->prev = new_node;
-		}
-		*h = new_node;
-		return (new_node);
+		return (add_dnodeint(h, n));
 	}
 
 	count = 0;
 	current = *h;
 
 	/* Traverse the list adding new node */
-	while (current != NULL && count < idx)
+	while (current != NULL && count < idx - 1)
 	{
 		current = current->next;
 		count++;
 	}
+
+	if (current && current->next == NULL)
+		return (add_dnodeint(h, n));
 
 	/* Check if head is empty and add new node */
 	while (*h == NULL)
