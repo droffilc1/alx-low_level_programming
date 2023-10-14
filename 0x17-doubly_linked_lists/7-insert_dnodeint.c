@@ -10,61 +10,38 @@
 */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new_node, *current;
-	unsigned int count;
-
-	/* Check if list is empty */
-	if (*h == NULL)
-		return (NULL);
-
-	/* Allocate memory for new node */
-	new_node = malloc(sizeof(dlistint_t));
-	/* Check if memory fails */
-	if (new_node == NULL)
-		return (NULL);
-
-	/* Create new node */
-	new_node->n = n;
-	new_node->next = NULL;
-	new_node->prev = NULL;
+	dlistint_t *current = *h;
+	unsigned int count = 0;
 
 	if (idx == 0)
-	{
 		/* Insert at the begining */
 		return (add_dnodeint(h, n));
-	}
-
-	count = 0;
-	current = *h;
 
 	/* Traverse the list adding new node */
 	while (current != NULL && count < idx - 1)
 	{
-		current = current->next;
 		count++;
+		current = current->next;
 	}
 
 	if (current && current->next == NULL)
 		return (add_dnodeint(h, n));
-
-	/* Check if head is empty and add new node */
-	while (*h == NULL)
+	
+	if (current != NULL)
 	{
-		new_node = *h;
-		(*h)->next = new_node;
+		/* Allocate memory for new node */
+		dlistint_t *new_node = malloc(sizeof(dlistint_t));
+		/* Check if memory allocation fails */
+		if (new_node == NULL)
+			return (NULL);
+
+		new_node->n = n;
+		new_node->next = current->next;
+		new_node->prev = current;
+		if (current->next != NULL)
+			current->next->prev = new_node;
+		current->next = new_node;
+		return (new_node);
 	}
-
-	/* Check index limit */
-	if  (count < idx)
-		return (NULL);
-
-	/* Insert new node at a specified index */
-
-	new_node->next = current;
-	new_node->prev = current->prev;
-	if (current->prev != NULL)
-		current->prev->next = new_node;
-	current->prev = new_node;
-
-	return (new_node);
+	return (NULL);
 }
