@@ -25,6 +25,7 @@ algorithm section.
 - [0x15. C - File input output](./0x15-file_io)
 - [0x16. C - Simple Shell](https://github.com/SherneVK/simple_shell)
 - [0x17. C - Doubly linked lists](./0x17-doubly_linked_lists)
+- [0x18. C - Dynamic libraries](./0x18-dynamic_libraries)
 - [0x0A. C - argc, argv](./0x0A-argc_argv)
 - [0x0B. C - malloc, free](./0x0B-malloc_free)
 - [0x0C. C - more malloc, free](./0x0C-more_malloc_free)
