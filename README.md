@@ -33,6 +33,7 @@ algorithm section.
 - [0x0D. C - preprocessor](./0x0D-preprocessor)
 - [0x0E. C - Structures, typedef](./0x0E-structures_typedef)
 - [0x0F. C - Variadic functions](./0x10-variadic_functions)
+- [0x1A. C - Hash tables](./0x1A-hash_tables)
 
 ## Requirements
 
