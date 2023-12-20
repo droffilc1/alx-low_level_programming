@@ -34,6 +34,8 @@ algorithm section.
 - [0x0E. C - Structures, typedef](./0x0E-structures_typedef)
 - [0x0F. C - Variadic functions](./0x10-variadic_functions)
 - [0x1A. C - Hash tables](./0x1A-hash_tables)
+- [0x1B. C - Sorting algorithms & Big O](https://github.com/WAKIOM/sorting_algorithms)
+- [0x1C. C - Makefiles](./0x1C-makefiles)
 
 ## Requirements
 
