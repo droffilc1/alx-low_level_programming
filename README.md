@@ -36,6 +36,7 @@ algorithm section.
 - [0x1A. C - Hash tables](./0x1A-hash_tables)
 - [0x1B. C - Sorting algorithms & Big O](https://github.com/WAKIOM/sorting_algorithms)
 - [0x1C. C - Makefiles](./0x1C-makefiles)
+- [0x1D. C - Binary trees](https://github.com/droffilc1/binary_trees)
 
 ## Requirements
 
