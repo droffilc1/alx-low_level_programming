@@ -19,7 +19,7 @@ int jump_search(int *array, size_t size, int value)
 
 	while (i < size && array[i] < value)
 	{
-		printf("Value checked at array[%d] = [%d]\n", i, array[i]);
+		printf("Value checked array[%d] = [%d]\n", i, array[i]);
 		i += block;
 	}
 	i -= block;
@@ -27,12 +27,10 @@ int jump_search(int *array, size_t size, int value)
 	/* perform linear search in current block */
 	for (; i <= (i + block) && i < size; i++, block--)
 	{
-		printf("Value checked at array[%d] = [%d]\n", i, array[i]);
+		printf("Value checked array[%d] = [%d]\n", i, array[i]);
 		if (array[i] == value)
-		{
-			/* position of the element beig=ng searched */
+			/* position of the element being searched */
 			return (i);
-		}
 	}
 	return (-1);
 }
